@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V2</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>    
+    html, body {
+        height: 100%;
+        width: 100%;
+        height: 100vh;    
+        width: 100vw;
+        margin: 0;
+        background-image: linear-gradient( #148a66, #16397a) 
+    }
+
+    .logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;        
+        background-size: 200px 200px;
+        width: 200px;
+        height: 200px;
+    }
+    .box, button, label.forgotPassword {
+        margin-left: auto;
+        margin-right: auto;                
+    }
+    label.forgotPassword {
+        margin-bottom: 20px;
+    }
+    .box {
+        margin: 50px 20px 50px 20px;        
+    }
+    label.email, label.password {
+        color :#968f8f;
+    }
+    div.text-box {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    input {
+        height: 40px;
+        width: 100%;
+        min-width: 100%;
+        padding: 0;
+        border-radius: 0;
+        line-height: 40px;
+        background-color: transparent;
+        color: white;        
+        border: none;
+        outline: none;
+        border-bottom: 3px solid #333333;        
+    }
+
+    .login-btn {        
+        height: 40px;
+        width: 100%;
+        min-width: 100%;        
+        border-radius: 15px;
+        line-height: 40px;
+        background-color: transparent;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        color: #ffffff;
+        border: 1px solid #ffffff;       
+    }
+    .signup-btn {
+        margin-top: 20px;
+        height: 40px;
+        width: 100%;
+        min-width: 100%;        
+        border-radius: 15px;
+        line-height: 40px;
+        background-color: #ffffff;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        color: #16397a;        
+    }
+    label.forgotPassword {
+        color :#ffffff;
+        text-align: right;
+        display: block;
+    }
+    </style>
+</head>
+<body >    
+    <form method="post" action="index.html">    
+        <img src="/Users/csivakolundu/Documents/Chandru/code/gamesta/src/assets/icon/img_bowling.png" class="logo">        
+        <div class="box">
+            <div class="text-box">
+                <label for="email" class="email">USERNAME</label>
+                <input type="email" name="email" value="" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />            
+            </div>
+            <div class="text-box">
+                <label for="password" class="password">PASSWORD</label>
+                <input type="password" name="email" value="" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />            
+            </div>
+            <label class="forgotPassword">Forgot Password?</label>
+            <button class="login-btn">LOGIN</button>
+            <button class="signup-btn">SIGN UP</button>
+        </div>      
+    </form>        
+</body>
+</html>

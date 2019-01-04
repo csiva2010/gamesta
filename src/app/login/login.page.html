@@ -1,0 +1,18 @@
+<div class="loginForm">
+<form (ngSubmit)="login()" > 
+  <img src="/assets/icon/img_bowling.png" class="logo">        
+  <div class="box">
+      <div class="text-box">
+          <label for="email" class="email">USERNAME</label>
+          <input type="email" name="email" value="{{credentials.email}}"  class="email" [(ngModel)]="credentials.email" />
+      </div>
+      <div class="text-box">
+          <label for="password" class="password">PASSWORD</label>
+          <input type="password" name="password" value=""   class="password" [(ngModel)]="credentials.password"/>
+          <label class="forgotPassword">Forgot Password?</label>
+      </div>
+      <button class="login-btn" type="submit">LOGIN</button>
+      <button class="signup-btn">SIGN UP</button>
+  </div>
+</form>
+</div>

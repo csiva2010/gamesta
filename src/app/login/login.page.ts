@@ -3,21 +3,27 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadingController, AlertController } from '@ionic/angular';
 import { AuthService } from '../auth.service';
+import {User} from './user';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  credentials = { email: '', password: '' };
+  user: User;  
   loading;
-  constructor(private router: Router, private auth: AuthService, private loadingCtrl: LoadingController, private alertController: AlertController) { }
+  constructor(private router: Router, private auth: AuthService, private loadingCtrl: LoadingController, private alertController: AlertController) { 
+    this.user = new User();
+    this.user.email='';
+    this.user.password='';
+    this.user.errorMessage = '';
+  }
   public createAccount() {
     this.router.navigate(['/signup'])
   }
   public login() {
     
-    this.auth.login(this.credentials)
+    this.auth.login(this.user)
     .subscribe(allowed => {
         if (allowed) {
           this.router.navigate(['/home'])
@@ -41,17 +47,20 @@ export class LoginPage implements OnInit {
     if(this.loading !== undefined) {
       this.loading.dismiss(); 
     }
-    const alert = await this.alertController.create({
-      header: 'Fail',
-      subHeader: 'Login failed',
-      message: 'Invalid email/password',
-      buttons: ['OK']
-    });
+    this.user.errorMessage = 'Oops, wrong email or password.';
+    // const alert = await this.alertController.create({
+    //   header: 'Fail',
+    //   subHeader: 'Login failed',
+    //   message: 'Invalid email/password',
+    //   buttons: ['OK']
+    // });
 
-    await alert.present();
+    // await alert.present();
   }
 
   ngOnInit() {
+    this.user.email='';
+    this.user.password='';
   }
 
 }

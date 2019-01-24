@@ -1,18 +1,47 @@
 <div class="loginForm">
 <form (ngSubmit)="login()" > 
-  <img src="/assets/icon/img_bowling.png" class="logo">        
-  <div class="box">
-      <div class="text-box">
-          <label for="email" class="email">USERNAME</label>
-          <input type="email" name="email" value="{{credentials.email}}"  class="email" [(ngModel)]="credentials.email" />
-      </div>
-      <div class="text-box">
-          <label for="password" class="password">PASSWORD</label>
-          <input type="password" name="password" value=""   class="password" [(ngModel)]="credentials.password"/>
-          <label class="forgotPassword">Forgot Password?</label>
-      </div>
-      <button class="login-btn" type="submit">LOGIN</button>
-      <button class="signup-btn">SIGN UP</button>
-  </div>
+    <ion-grid>    
+        <ion-row>
+                <ion-col>
+                    <img src="/assets/icon/img_bowling.png" class="logo">        
+                </ion-col>
+        </ion-row>
+        <ion-row>
+                <ion-col>
+                        <div class="error-message" *ngIf="user.errorMessage != ''" >
+                                <ion-label color="danger">
+                                    {{user.errorMessage}}
+                                </ion-label>
+                          </div>
+                </ion-col>
+        </ion-row>
+
+        <ion-row>
+                <ion-col>
+                        <div class="text-box">          
+                            <ion-input type="email" color="primary" placeholder="Email" name="email" value="{{user.email}}"  class="email" [(ngModel)]="user.email" autofocus="true" clearInput="true" inputmode="email"> </ion-input>
+                        </div>
+                </ion-col>
+        </ion-row>
+
+        <ion-row>
+                <ion-col>
+                        <div class="text-box">
+                                <ion-input type="password" color="primary" placeholder="password" name="password" value="{{user.password}}"  class="password" [(ngModel)]="user.password" autocomplete="off" clearInput="true" inputmode="password"> </ion-input>                    
+                                <ion-label class="forgotPassword" color="primary">Forgot Password?</ion-label>
+                          </div>
+                </ion-col>
+        </ion-row>        
+        <ion-row>
+                <ion-col>
+                        <ion-button color="primary" expand="full" fill="outline" button-type="button" shape="round" size="12" (click)="login()">LOGIN</ion-button >
+                </ion-col>
+        </ion-row>
+        <ion-row>
+                <ion-col>
+                        <ion-button color="secondary" expand="full" fill="solid" button-type="button" shape="round" size="12" >SIGNUP</ion-button >
+                </ion-col>
+        </ion-row>  
+    </ion-grid>
 </form>
 </div>

@@ -15,7 +15,7 @@ div.loginForm {
     width: 200px;
     height: 200px;
 }
-.box, button,label.forgotPassword {
+.box, button,label.forgotPassword, .error-message {
     margin-left: auto;
     margin-right: auto;                
 }
@@ -26,19 +26,27 @@ label.forgotPassword {
 .box {
     margin: 50px 20px 50px 20px;        
 }
-label.forgotPassword {
-    color :#ffffff;
+div.error-message {
+    text-align: center;
+    color: #def0a0
+}
+img.error-img {
+    margin-left: 10%;
+    float: left;
+    height: 24px;
+    width: 24px;
+}
+
+ion-label.forgotPassword {    
     text-align: right;
     display: block;
 }
-label.email, label.password {
-    color :#968f8f;
-}
+
 div.text-box {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-input {
+ion-input {
     height: 40px;
     width: 100%;
     min-width: 100%;
